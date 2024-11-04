@@ -1,0 +1,97 @@
+.frame{
+    position: absolute;
+    background: #3FAF82;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-icon{
+    position: relative;
+}
+
+.checkbox{
+    position: absolute;
+    top: -33px;
+    left: -4px;
+    width: 80px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+}
+
+.line{
+    background: #fff;
+	height: 8px;
+	width: 80px;
+	border-radius: 12px;
+	margin: 12px 0;
+	filter: drop-shadow(6px 8px 6px rgba(0, 0, 0, 0.3));
+	z-index: 2;
+}
+
+.line::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    width: 80px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.line::after{
+    content: "";
+	position: absolute;
+	top: 20px;
+	height: 8px;
+	width: 80px;
+	background: #fff;
+	border-radius: 12px;
+	transition: 0.3s;
+}
+
+.menu-icon input:checked~ .hidden-line{
+    z-index: 1;
+	background: rgba(255, 255, 255, 0.9);
+	height: 8px;
+	width: 80px;
+	border-radius: 12px;
+	position: absolute;
+	top: 0px;
+	transition-delay: 400ms;
+	transition-duration: 300ms;
+	transform: rotate(45deg);   
+}
+
+.menu-icon input:checked~.line:before {
+	top: 0;
+	width: 80px;
+}
+
+.menu-icon input:checked~.line {
+	top: 0;
+	width: 80px;
+	transition-delay: 400ms;
+	transition-duration: 300ms;
+	transform: rotate(135deg);
+}
+
+.menu-icon input:checked~.line:after {
+	top: 0;
+	width: 80px;
+}
